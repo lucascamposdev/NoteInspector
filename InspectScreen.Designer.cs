@@ -35,16 +35,19 @@ namespace NoteInspector
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InspectScreen));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btn_voltar = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.btn_Voltar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.input_nota = new System.Windows.Forms.TextBox();
+            this.btn_ProcurarNota = new System.Windows.Forms.Button();
             this.lbl_databaseName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_atualizarKaffaImportacao = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -63,9 +66,6 @@ namespace NoteInspector
             this.statusView = new System.Windows.Forms.DataGridView();
             this.kaffaImportacaoView = new System.Windows.Forms.DataGridView();
             this.btn_openVwImportacaoTable = new System.Windows.Forms.Button();
-            this.btn_procurar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.input_nota = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -80,29 +80,29 @@ namespace NoteInspector
             ((System.ComponentModel.ISupportInitialize)(this.kaffaImportacaoView)).BeginInit();
             this.SuspendLayout();
             // 
-            // btn_voltar
+            // btn_Voltar
             // 
-            this.btn_voltar.FlatAppearance.BorderSize = 0;
-            this.btn_voltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_voltar.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_voltar.ForeColor = System.Drawing.Color.White;
-            this.btn_voltar.Location = new System.Drawing.Point(1400, 16);
-            this.btn_voltar.Name = "btn_voltar";
-            this.btn_voltar.Size = new System.Drawing.Size(124, 32);
-            this.btn_voltar.TabIndex = 1;
-            this.btn_voltar.Text = "Voltar";
-            this.btn_voltar.UseVisualStyleBackColor = true;
-            this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
+            this.btn_Voltar.FlatAppearance.BorderSize = 0;
+            this.btn_Voltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Voltar.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Voltar.ForeColor = System.Drawing.Color.White;
+            this.btn_Voltar.Location = new System.Drawing.Point(1400, 16);
+            this.btn_Voltar.Name = "btn_Voltar";
+            this.btn_Voltar.Size = new System.Drawing.Size(124, 32);
+            this.btn_Voltar.TabIndex = 1;
+            this.btn_Voltar.Text = "Voltar";
+            this.btn_Voltar.UseVisualStyleBackColor = true;
+            this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.input_nota);
-            this.panel1.Controls.Add(this.btn_procurar);
+            this.panel1.Controls.Add(this.btn_ProcurarNota);
             this.panel1.Controls.Add(this.lbl_databaseName);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btn_voltar);
+            this.panel1.Controls.Add(this.btn_Voltar);
             this.panel1.Location = new System.Drawing.Point(-3, -3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1546, 63);
@@ -118,6 +118,31 @@ namespace NoteInspector
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // input_nota
+            // 
+            this.input_nota.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.input_nota.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.input_nota.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.input_nota.Location = new System.Drawing.Point(632, 21);
+            this.input_nota.Name = "input_nota";
+            this.input_nota.Size = new System.Drawing.Size(213, 27);
+            this.input_nota.TabIndex = 3;
+            // 
+            // btn_ProcurarNota
+            // 
+            this.btn_ProcurarNota.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btn_ProcurarNota.BackColor = System.Drawing.Color.Black;
+            this.btn_ProcurarNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ProcurarNota.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ProcurarNota.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_ProcurarNota.Location = new System.Drawing.Point(854, 20);
+            this.btn_ProcurarNota.Name = "btn_ProcurarNota";
+            this.btn_ProcurarNota.Size = new System.Drawing.Size(103, 29);
+            this.btn_ProcurarNota.TabIndex = 5;
+            this.btn_ProcurarNota.Text = "Buscar";
+            this.btn_ProcurarNota.UseVisualStyleBackColor = false;
+            this.btn_ProcurarNota.Click += new System.EventHandler(this.btn_ProcurarNota_Click);
+            // 
             // lbl_databaseName
             // 
             this.lbl_databaseName.AutoSize = true;
@@ -128,6 +153,18 @@ namespace NoteInspector
             this.lbl_databaseName.Size = new System.Drawing.Size(90, 28);
             this.lbl_databaseName.TabIndex = 0;
             this.lbl_databaseName.Text = "Coelba";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(566, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 25);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Nota:";
             // 
             // panel2
             // 
@@ -180,14 +217,14 @@ namespace NoteInspector
             this.errosView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.errosView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.errosView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle61.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle61.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle61.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle61.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle61.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle61.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle61.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.errosView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle61;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.errosView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.errosView.ColumnHeadersHeight = 25;
             this.errosView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.errosView.EnableHeadersVisualStyles = false;
@@ -196,8 +233,8 @@ namespace NoteInspector
             this.errosView.Name = "errosView";
             this.errosView.RowHeadersVisible = false;
             this.errosView.RowHeadersWidth = 51;
-            dataGridViewCellStyle62.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errosView.RowsDefaultCellStyle = dataGridViewCellStyle62;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errosView.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.errosView.RowTemplate.Height = 24;
             this.errosView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.errosView.Size = new System.Drawing.Size(1506, 173);
@@ -317,13 +354,13 @@ namespace NoteInspector
             this.statusView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.statusView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.statusView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle63.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle63.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle63.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle63.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle63.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle63.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.statusView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle63;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.statusView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.statusView.ColumnHeadersHeight = 25;
             this.statusView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.statusView.EnableHeadersVisualStyles = false;
@@ -332,8 +369,8 @@ namespace NoteInspector
             this.statusView.Name = "statusView";
             this.statusView.RowHeadersVisible = false;
             this.statusView.RowHeadersWidth = 51;
-            dataGridViewCellStyle64.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusView.RowsDefaultCellStyle = dataGridViewCellStyle64;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusView.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.statusView.RowTemplate.Height = 24;
             this.statusView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.statusView.Size = new System.Drawing.Size(1506, 173);
@@ -345,13 +382,13 @@ namespace NoteInspector
             this.kaffaImportacaoView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.kaffaImportacaoView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.kaffaImportacaoView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle65.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle65.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle65.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle65.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle65.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.kaffaImportacaoView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle65;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.kaffaImportacaoView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.kaffaImportacaoView.ColumnHeadersHeight = 25;
             this.kaffaImportacaoView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.kaffaImportacaoView.EnableHeadersVisualStyles = false;
@@ -360,8 +397,8 @@ namespace NoteInspector
             this.kaffaImportacaoView.Name = "kaffaImportacaoView";
             this.kaffaImportacaoView.RowHeadersVisible = false;
             this.kaffaImportacaoView.RowHeadersWidth = 51;
-            dataGridViewCellStyle66.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kaffaImportacaoView.RowsDefaultCellStyle = dataGridViewCellStyle66;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kaffaImportacaoView.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.kaffaImportacaoView.RowTemplate.Height = 24;
             this.kaffaImportacaoView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.kaffaImportacaoView.Size = new System.Drawing.Size(1506, 173);
@@ -378,43 +415,6 @@ namespace NoteInspector
             this.btn_openVwImportacaoTable.TabIndex = 23;
             this.btn_openVwImportacaoTable.Text = "Ver";
             this.btn_openVwImportacaoTable.UseVisualStyleBackColor = true;
-            // 
-            // btn_procurar
-            // 
-            this.btn_procurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btn_procurar.BackColor = System.Drawing.Color.Black;
-            this.btn_procurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_procurar.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_procurar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_procurar.Location = new System.Drawing.Point(854, 20);
-            this.btn_procurar.Name = "btn_procurar";
-            this.btn_procurar.Size = new System.Drawing.Size(103, 29);
-            this.btn_procurar.TabIndex = 5;
-            this.btn_procurar.Text = "Buscar";
-            this.btn_procurar.UseVisualStyleBackColor = false;
-            this.btn_procurar.Click += new System.EventHandler(this.btn_procurar_Click);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(566, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 25);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Nota:";
-            // 
-            // input_nota
-            // 
-            this.input_nota.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.input_nota.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.input_nota.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.input_nota.Location = new System.Drawing.Point(632, 21);
-            this.input_nota.Name = "input_nota";
-            this.input_nota.Size = new System.Drawing.Size(213, 27);
-            this.input_nota.TabIndex = 3;
             // 
             // InspectScreen
             // 
@@ -460,7 +460,7 @@ namespace NoteInspector
         }
 
         #endregion
-        private System.Windows.Forms.Button btn_voltar;
+        private System.Windows.Forms.Button btn_Voltar;
         private System.Windows.Forms.Panel panel1;
         private Panel panel2;
         private Label label5;
@@ -483,7 +483,7 @@ namespace NoteInspector
         private Button btn_openVwImportacaoTable;
         private Button btn_atualizarKaffaImportacao;
         private TextBox input_nota;
-        private Button btn_procurar;
+        private Button btn_ProcurarNota;
         private Label label1;
     }
 }

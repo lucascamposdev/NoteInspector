@@ -30,7 +30,6 @@ namespace NoteInspector
 
         private void button1_Click(object sender, EventArgs e)
         {
-            loadingManager.Loading(this, false);
             var selectedDatabase = comboBox1.SelectedItem.ToString();
 
             if(string.IsNullOrEmpty(selectedDatabase))
@@ -42,24 +41,15 @@ namespace NoteInspector
 
             if (ConnectionString.Strings.TryGetValue(selectedDatabase, out string connectionString))
             {
-                try
-                {
-                    InspectRepository repository = new InspectRepository(connectionString);
-                    InspectScreen screen = new InspectScreen(connectionString, selectedDatabase, repository);
-                    screen.Show();
+                InspectScreen screen = new InspectScreen(selectedDatabase, connectionString);
+                screen.Show();
 
-                    this.Hide(); 
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao conectar: " + ex.Message);
-                }
+                this.Hide(); 
             }
             else
             {
                 MessageBox.Show("Banco de dados não encontrado.");
             }
-            loadingManager.Stop(this);
         }
     }
 }

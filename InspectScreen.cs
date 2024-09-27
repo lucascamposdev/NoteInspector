@@ -10,7 +10,6 @@ namespace NoteInspector
 {
     public partial class InspectScreen : Form
     {
-        private readonly string _connectionString;
         private readonly InspectRepository _repository;
 
         private string NOTA;
@@ -19,28 +18,23 @@ namespace NoteInspector
 
         private DataTable VW_IMPORTACAO;
 
-        private LoadingManager loadingManager = new LoadingManager();
+        private readonly LoadingManager _loadingManager = new LoadingManager();
 
-        public InspectScreen(string connectionString, 
-            string selectedDatabase, 
-            InspectRepository inspectRepository)
+        public InspectScreen(string selectedDatabase, string connectionString)
         {
             InitializeComponent();
-            _connectionString = connectionString;
-            _repository = inspectRepository;
-
+            _repository = new InspectRepository(connectionString);
         }
 
         private void InspectScreen_Click(object sender, EventArgs e)
         {
-            if (loadingManager.isLoading)
+            if (_loadingManager.isLoading)
             {
                 return;
             }
         }
 
-
-        private void btn_voltar_Click(object sender, EventArgs e)
+        private void btn_Voltar_Click(object sender, EventArgs e)
         {
             StartScreen screen = new StartScreen();
             screen.Show();
@@ -48,14 +42,29 @@ namespace NoteInspector
             this.Close();
         }
 
-        private async void btn_procurar_Click(object sender, EventArgs e)
+        private void LimparTela()
         {
-            loadingManager.Loading(this, false);
+            kaffaImportacaoView.DataSource = null;
+            statusView.DataSource = null;
+            errosView.DataSource = null;
+
+            NOTA = null;
+            DE_ID_KAFFA = null;
+            NU_PACOTE_ID = null;
+            VW_IMPORTACAO = null;
+
+            lbl_chavesAssociadasNumber.Text = "0";
+            lbl_chavesAssociadasNumber.ForeColor = Color.Black;
+        }
+
+        private async void btn_ProcurarNota_Click(object sender, EventArgs e)
+        {
+            _loadingManager.Loading(this, false);
 
             if (String.IsNullOrEmpty(input_nota.Text))
             {
                 MessageBox.Show("Insira o número da nota");
-                loadingManager.Stop(this);
+                _loadingManager.Stop(this);
                 return;
             }
 
@@ -63,7 +72,7 @@ namespace NoteInspector
 
             try
             {
-                // Obtém os dados da tabela principal (kaffa_projeto_importação)
+                // Tabela principal
                 DataTable kaffaImportacaoTable = await _repository.GetKaffaImportacao(NOTA);
 
                 if (kaffaImportacaoTable.Rows.Count > 0)
@@ -76,12 +85,13 @@ namespace NoteInspector
                 }
                 else
                 {
-                    ClearFields();
                     MessageBox.Show("Nota não encontrada.");
-                    loadingManager.Stop(this);
+                    LimparTela();
+                    _loadingManager.Stop(this);
                     return;
                 }
 
+                // Alimenta as demais tabelas (Status, Erros, VW)
                 statusView.DataSource = await _repository.GetStatusTable(DE_ID_KAFFA);
                 errosView.DataSource = await _repository.GetErrosTable(DE_ID_KAFFA);
 
@@ -92,7 +102,7 @@ namespace NoteInspector
             {
                 MessageBox.Show(ex.Message);
             }
-            loadingManager.Stop(this);
+            _loadingManager.Stop(this);
         }
 
         private void GetDE_ID_KAFFA(DataTable kaffaImportacaoTable)
@@ -108,11 +118,11 @@ namespace NoteInspector
                 ID_KAFFA = kaffaImportacaoTable.Rows[0]["DE_ID_KAFFA_CC"].ToString();
             }
 
-            string[] partes = ID_KAFFA.Split('_');
+            string[] splitted = ID_KAFFA.Split('_');
 
-            if (partes.Length > 1)
+            if (splitted.Length > 1)
             {
-                DE_ID_KAFFA = partes[1];
+                DE_ID_KAFFA = splitted[1];
             }
             else
             {
@@ -151,7 +161,7 @@ namespace NoteInspector
 
         private async void btn_atualizarErros_Click(object sender, EventArgs e)
         {
-            loadingManager.Loading(this, false);
+            _loadingManager.Loading(this, false);
             if (!String.IsNullOrEmpty(DE_ID_KAFFA))
             {
                 errosView.DataSource = await _repository.GetErrosTable(DE_ID_KAFFA);
@@ -160,27 +170,12 @@ namespace NoteInspector
             {
                 MessageBox.Show("Faça a busca pela nota primeiro.");
             }
-            loadingManager.Stop(this);
-        }
-
-        private void ClearFields()
-        {
-            kaffaImportacaoView.DataSource = null;
-            statusView.DataSource = null;
-            errosView.DataSource = null;
-
-            NOTA = null;
-            DE_ID_KAFFA = null;
-            NU_PACOTE_ID = null;
-            VW_IMPORTACAO = null;
-
-            lbl_chavesAssociadasNumber.Text = "0";
-            lbl_chavesAssociadasNumber.ForeColor = Color.Black;
+            _loadingManager.Stop(this);
         }
 
         private async void btn_atualizarKaffaImportacao_Click(object sender, EventArgs e)
         {
-            loadingManager.Loading(this, false);
+            _loadingManager.Loading(this, false);
             if (!String.IsNullOrEmpty(NOTA))
             {
                 kaffaImportacaoView.DataSource = await _repository.GetKaffaImportacao(NOTA);
@@ -189,7 +184,7 @@ namespace NoteInspector
             {
                 MessageBox.Show("Faça a busca pela nota primeiro.");
             }
-            loadingManager.Stop(this);
+            _loadingManager.Stop(this);
         }
     }
 }

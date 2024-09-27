@@ -19,7 +19,7 @@ public class InspectRepository
 
     public async Task<DataTable> GetKaffaImportacao(string NOTA)
     {
-        string query = $"SELECT * FROM tb_kaffa_projeto_importacao WHERE NO_NOME_PROJETO_KIT LIKE '%{NOTA}%';";
+        string query = $"SELECT * FROM tb_kaffa_projeto_importacao WHERE NO_NOME_PROJETO_KIT LIKE '%{NOTA}%' order by 3 desc;";
 
         var dataTable = await ExecuteSelect(query);
 
@@ -28,7 +28,7 @@ public class InspectRepository
 
     public async Task<DataTable> GetStatusTable(string DE_ID_CCKAFFA)
     {
-        string query = $"SELECT * FROM NEOSDE.tb_status_importacao_kaffa WHERE NU_KAFFA_ID like '%{DE_ID_CCKAFFA}%'";
+        string query = $"SELECT * FROM NEOSDE.tb_status_importacao_kaffa WHERE NU_KAFFA_ID like '%{DE_ID_CCKAFFA}%' order by dt_envio desc;";
 
         var dataTable = await ExecuteSelect(query);
 
@@ -46,7 +46,7 @@ public class InspectRepository
 
     public async Task<DataTable> GetVwImportacao(int NU_PACOTE_ID)
     {
-        string query = $"SELECT * FROM neosde.vw_importacao_kaffa;";
+        string query = $"SELECT * FROM neosde.vw_importacao_kaffa WHERE NU_PACOTE_ID = {NU_PACOTE_ID};";
 
         var dataTable = await ExecuteSelect(query);
 

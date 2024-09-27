@@ -98,8 +98,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IDatabaseConnection.cs" />
-    <Compile Include="Infra\MySqlConnectionWrapper.cs" />
     <Compile Include="Infra\ConnectionString.cs" />
     <Compile Include="InspectScreen.cs">
       <SubType>Form</SubType>
