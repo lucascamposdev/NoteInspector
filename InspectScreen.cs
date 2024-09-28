@@ -186,5 +186,19 @@ namespace NoteInspector
             }
             _loadingManager.Stop(this);
         }
+
+        private void btn_openVwImportacaoTable_Click(object sender, EventArgs e)
+        {
+
+            if(VW_IMPORTACAO == null) 
+            {
+                MessageBox.Show("Faça a busca pela nota primeiro.");
+                return; 
+            }
+
+            TableViewScreen screen = new TableViewScreen("VW_IMPORTACAO_KAFFA", VW_IMPORTACAO);
+            screen.Show();
+        }
+
     }
 }
