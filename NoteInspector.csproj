@@ -98,12 +98,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Infra\ConnectionString.cs" />
-    <Compile Include="InspectScreen.cs">
+    <Compile Include="FilaJobScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InspectScreen.Designer.cs">
-      <DependentUpon>InspectScreen.cs</DependentUpon>
+    <Compile Include="FilaJobScreen.Designer.cs">
+      <DependentUpon>FilaJobScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infra\ConnectionPool.cs" />
+    <Compile Include="MainScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainScreen.Designer.cs">
+      <DependentUpon>MainScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Repository\InspectRepository.cs" />
     <Compile Include="StartScreen.cs">
@@ -121,8 +127,11 @@
       <DependentUpon>TableViewScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\LoadingManager.cs" />
-    <EmbeddedResource Include="InspectScreen.resx">
-      <DependentUpon>InspectScreen.cs</DependentUpon>
+    <EmbeddedResource Include="FilaJobScreen.resx">
+      <DependentUpon>FilaJobScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainScreen.resx">
+      <DependentUpon>MainScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StartScreen.resx">
       <DependentUpon>StartScreen.cs</DependentUpon>

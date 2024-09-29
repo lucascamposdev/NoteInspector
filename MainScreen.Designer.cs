@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace NoteInspector
 {
-    partial class InspectScreen
+    partial class MainScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -34,13 +34,13 @@ namespace NoteInspector
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InspectScreen));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainScreen));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_Voltar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.input_nota = new System.Windows.Forms.TextBox();
@@ -64,7 +64,8 @@ namespace NoteInspector
             this.statusView = new System.Windows.Forms.DataGridView();
             this.kaffaImportacaoView = new System.Windows.Forms.DataGridView();
             this.btn_openVwImportacaoTable = new System.Windows.Forms.Button();
-            this.btn_reenvioCheckin = new System.Windows.Forms.Button();
+            this.btn_openFilaJobTable = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -109,7 +110,7 @@ namespace NoteInspector
             this.input_nota.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.input_nota.BackColor = System.Drawing.SystemColors.HighlightText;
             this.input_nota.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.input_nota.Location = new System.Drawing.Point(632, 21);
+            this.input_nota.Location = new System.Drawing.Point(622, 21);
             this.input_nota.Name = "input_nota";
             this.input_nota.Size = new System.Drawing.Size(213, 27);
             this.input_nota.TabIndex = 3;
@@ -121,7 +122,7 @@ namespace NoteInspector
             this.btn_ProcurarNota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ProcurarNota.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ProcurarNota.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_ProcurarNota.Location = new System.Drawing.Point(854, 20);
+            this.btn_ProcurarNota.Location = new System.Drawing.Point(844, 20);
             this.btn_ProcurarNota.Name = "btn_ProcurarNota";
             this.btn_ProcurarNota.Size = new System.Drawing.Size(103, 29);
             this.btn_ProcurarNota.TabIndex = 5;
@@ -135,7 +136,7 @@ namespace NoteInspector
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(566, 22);
+            this.label1.Location = new System.Drawing.Point(556, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 25);
             this.label1.TabIndex = 4;
@@ -159,7 +160,7 @@ namespace NoteInspector
             this.btn_atualizarKaffaImportacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_atualizarKaffaImportacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_atualizarKaffaImportacao.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_atualizarKaffaImportacao.Location = new System.Drawing.Point(1411, 6);
+            this.btn_atualizarKaffaImportacao.Location = new System.Drawing.Point(1403, 7);
             this.btn_atualizarKaffaImportacao.Name = "btn_atualizarKaffaImportacao";
             this.btn_atualizarKaffaImportacao.Size = new System.Drawing.Size(99, 27);
             this.btn_atualizarKaffaImportacao.TabIndex = 3;
@@ -195,14 +196,14 @@ namespace NoteInspector
             this.errosView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.errosView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.errosView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.errosView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle37.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle37.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.errosView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
             this.errosView.ColumnHeadersHeight = 25;
             this.errosView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.errosView.EnableHeadersVisualStyles = false;
@@ -211,8 +212,8 @@ namespace NoteInspector
             this.errosView.Name = "errosView";
             this.errosView.RowHeadersVisible = false;
             this.errosView.RowHeadersWidth = 51;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errosView.RowsDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errosView.RowsDefaultCellStyle = dataGridViewCellStyle38;
             this.errosView.RowTemplate.Height = 24;
             this.errosView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.errosView.Size = new System.Drawing.Size(1520, 173);
@@ -236,7 +237,7 @@ namespace NoteInspector
             this.btn_atualizarErros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_atualizarErros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_atualizarErros.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_atualizarErros.Location = new System.Drawing.Point(1411, 6);
+            this.btn_atualizarErros.Location = new System.Drawing.Point(1403, 6);
             this.btn_atualizarErros.Name = "btn_atualizarErros";
             this.btn_atualizarErros.Size = new System.Drawing.Size(99, 27);
             this.btn_atualizarErros.TabIndex = 2;
@@ -335,13 +336,13 @@ namespace NoteInspector
             this.statusView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.statusView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.statusView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.statusView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle39.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle39.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.statusView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle39;
             this.statusView.ColumnHeadersHeight = 25;
             this.statusView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.statusView.EnableHeadersVisualStyles = false;
@@ -350,8 +351,8 @@ namespace NoteInspector
             this.statusView.Name = "statusView";
             this.statusView.RowHeadersVisible = false;
             this.statusView.RowHeadersWidth = 51;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusView.RowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle40.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusView.RowsDefaultCellStyle = dataGridViewCellStyle40;
             this.statusView.RowTemplate.Height = 24;
             this.statusView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.statusView.Size = new System.Drawing.Size(1520, 173);
@@ -364,13 +365,13 @@ namespace NoteInspector
             this.kaffaImportacaoView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.kaffaImportacaoView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.kaffaImportacaoView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.kaffaImportacaoView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle41.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle41.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.kaffaImportacaoView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle41;
             this.kaffaImportacaoView.ColumnHeadersHeight = 25;
             this.kaffaImportacaoView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.kaffaImportacaoView.EnableHeadersVisualStyles = false;
@@ -379,8 +380,8 @@ namespace NoteInspector
             this.kaffaImportacaoView.Name = "kaffaImportacaoView";
             this.kaffaImportacaoView.RowHeadersVisible = false;
             this.kaffaImportacaoView.RowHeadersWidth = 51;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kaffaImportacaoView.RowsDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kaffaImportacaoView.RowsDefaultCellStyle = dataGridViewCellStyle42;
             this.kaffaImportacaoView.RowTemplate.Height = 24;
             this.kaffaImportacaoView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.kaffaImportacaoView.Size = new System.Drawing.Size(1520, 173);
@@ -399,27 +400,39 @@ namespace NoteInspector
             this.btn_openVwImportacaoTable.UseVisualStyleBackColor = true;
             this.btn_openVwImportacaoTable.Click += new System.EventHandler(this.btn_openVwImportacaoTable_Click);
             // 
-            // btn_reenvioCheckin
+            // btn_openFilaJobTable
             // 
-            this.btn_reenvioCheckin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btn_reenvioCheckin.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_reenvioCheckin.FlatAppearance.BorderSize = 0;
-            this.btn_reenvioCheckin.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_reenvioCheckin.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_reenvioCheckin.Location = new System.Drawing.Point(1331, 734);
-            this.btn_reenvioCheckin.Name = "btn_reenvioCheckin";
-            this.btn_reenvioCheckin.Size = new System.Drawing.Size(186, 38);
-            this.btn_reenvioCheckin.TabIndex = 24;
-            this.btn_reenvioCheckin.Text = "Reenvio Checkin";
-            this.btn_reenvioCheckin.UseVisualStyleBackColor = false;
+            this.btn_openFilaJobTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_openFilaJobTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_openFilaJobTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.btn_openFilaJobTable.Location = new System.Drawing.Point(1239, 739);
+            this.btn_openFilaJobTable.Name = "btn_openFilaJobTable";
+            this.btn_openFilaJobTable.Size = new System.Drawing.Size(96, 32);
+            this.btn_openFilaJobTable.TabIndex = 25;
+            this.btn_openFilaJobTable.Text = "Fila Job";
+            this.btn_openFilaJobTable.UseVisualStyleBackColor = true;
+            this.btn_openFilaJobTable.Click += new System.EventHandler(this.btn_openFilaJobTable_Click);
             // 
-            // InspectScreen
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.label6.Location = new System.Drawing.Point(1341, 737);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(180, 34);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Reenvio Checkin";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1533, 793);
-            this.Controls.Add(this.btn_reenvioCheckin);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btn_openFilaJobTable);
             this.Controls.Add(this.btn_openVwImportacaoTable);
             this.Controls.Add(this.kaffaImportacaoView);
             this.Controls.Add(this.statusView);
@@ -433,7 +446,7 @@ namespace NoteInspector
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "InspectScreen";
+            this.Name = "MainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Note Inspector";
             this.panel1.ResumeLayout(false);
@@ -480,6 +493,7 @@ namespace NoteInspector
         private TextBox input_nota;
         private Button btn_ProcurarNota;
         private Label label1;
-        private Button btn_reenvioCheckin;
+        private Button btn_openFilaJobTable;
+        private Label label6;
     }
 }

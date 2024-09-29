@@ -78,7 +78,6 @@ C:\Users\lucas\OneDrive\Área de Trabalho\NoteInspector\bin\Debug\System.Numeric
 C:\Users\lucas\OneDrive\Área de Trabalho\NoteInspector\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\lucas\OneDrive\Área de Trabalho\NoteInspector\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\lucas\OneDrive\Área de Trabalho\NoteInspector\obj\Debug\NoteInspector.csproj.AssemblyReference.cache
-C:\Users\lucas\OneDrive\Área de Trabalho\NoteInspector\obj\Debug\NoteInspector.InspectScreen.resources
 C:\Users\lucas\OneDrive\Área de Trabalho\NoteInspector\obj\Debug\NoteInspector.StartScreen.resources
 C:\Users\lucas\OneDrive\Área de Trabalho\NoteInspector\obj\Debug\NoteInspector.Properties.Resources.resources
 C:\Users\lucas\OneDrive\Área de Trabalho\NoteInspector\obj\Debug\NoteInspector.TableViewScreen.resources
@@ -87,3 +86,5 @@ C:\Users\lucas\OneDrive\Área de Trabalho\NoteInspector\obj\Debug\NoteInspector.
 C:\Users\lucas\OneDrive\Área de Trabalho\NoteInspector\obj\Debug\NoteInsp.EE97E862.Up2Date
 C:\Users\lucas\OneDrive\Área de Trabalho\NoteInspector\obj\Debug\NoteInspector.exe
 C:\Users\lucas\OneDrive\Área de Trabalho\NoteInspector\obj\Debug\NoteInspector.pdb
+C:\Users\lucas\OneDrive\Área de Trabalho\NoteInspector\obj\Debug\NoteInspector.MainScreen.resources
+C:\Users\lucas\OneDrive\Área de Trabalho\NoteInspector\obj\Debug\NoteInspector.FilaJobScreen.resources

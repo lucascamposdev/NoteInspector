@@ -39,9 +39,10 @@ namespace NoteInspector
                 return;
             }
 
-            if (ConnectionString.Strings.TryGetValue(selectedDatabase, out string connectionString))
+            if (ConnectionPool.Strings.TryGetValue(selectedDatabase, out string connectionString))
             {
-                InspectScreen screen = new InspectScreen(selectedDatabase, connectionString);
+                ConnectionPool._connectionString = connectionString;
+                MainScreen screen = new MainScreen(selectedDatabase);
                 screen.Show();
 
                 this.Hide(); 

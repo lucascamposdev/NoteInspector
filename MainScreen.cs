@@ -8,22 +8,21 @@ using System.Windows.Forms;
 
 namespace NoteInspector
 {
-    public partial class InspectScreen : Form
+    public partial class MainScreen : Form
     {
         private readonly InspectRepository _repository;
+        private readonly LoadingManager _loadingManager = new LoadingManager();
 
         private string NOTA;
         private string DE_ID_KAFFA;
         private int? NU_PACOTE_ID;
-
         private DataTable VW_IMPORTACAO;
 
-        private readonly LoadingManager _loadingManager = new LoadingManager();
-
-        public InspectScreen(string selectedDatabase, string connectionString)
+        public MainScreen(string selectedDatabase)
         {
             InitializeComponent();
-            _repository = new InspectRepository(connectionString);
+            this.Text = $"Note Inspector - {selectedDatabase}";
+            _repository = InspectRepository.Instance;
         }
 
         private void InspectScreen_Click(object sender, EventArgs e)
@@ -200,5 +199,20 @@ namespace NoteInspector
             screen.Show();
         }
 
+        private async void btn_openFilaJobTable_Click(object sender, EventArgs e)
+        {
+            _loadingManager.Loading(this, false);
+            if (NU_PACOTE_ID.HasValue)
+            {
+                DataTable data = await _repository.GetFilaJob(NU_PACOTE_ID.Value);
+                FilaJobScreen screen = new FilaJobScreen(data);
+                screen.Show();
+            }
+            else
+            {
+                MessageBox.Show("Faça a busca pela nota primeiro.");
+            }
+            _loadingManager.Stop(this);
+        }
     }
 }

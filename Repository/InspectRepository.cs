@@ -10,11 +10,25 @@ using System.Threading.Tasks;
 
 public class InspectRepository
 {
-    private string _connectionString;
+    private static InspectRepository _instance;
+    private static readonly object _lock = new object();
 
-    public InspectRepository(string connectionString)
+    public static InspectRepository Instance
     {
-        _connectionString = connectionString;
+        get
+        {
+            if (_instance == null)
+            {
+                lock (_lock)
+                {
+                    if (_instance == null)
+                    {
+                        _instance = new InspectRepository();
+                    }
+                }
+            }
+            return _instance;
+        }
     }
 
     public async Task<DataTable> GetKaffaImportacao(string NOTA)
@@ -53,13 +67,31 @@ public class InspectRepository
         return dataTable;
     }
 
+    public async Task<DataTable> GetFilaJob(int NU_PACOTE_ID)
+    {
+        string query = $"SELECT * FROM neosde.tb_fila_job WHERE DE_PARAMETROS_JSON LIKE '%{NU_PACOTE_ID}%' order by DT_INCLUSAO desc;";
+
+        var dataTable = await ExecuteSelect(query);
+
+        return dataTable;
+    }
+
+    public async Task<DataTable> GetLogJob(string NU_ID_FILA_JOB)
+    {
+        string query = $"SELECT * FROM neosde.tb_log_job WHERE NU_ID_FILA_JOB = {NU_ID_FILA_JOB} order by DT_INCLUSAO desc;";
+
+        var dataTable = await ExecuteSelect(query);
+
+        return dataTable;
+    }
+
     private async Task<DataTable> ExecuteSelect(string query)
     {
         DataTable dataTable = new DataTable();
 
         try
         {
-            using (var connection = new MySqlConnection(_connectionString))
+            using (var connection = new MySqlConnection(ConnectionPool._connectionString))
             {
                 await connection.OpenAsync();
 

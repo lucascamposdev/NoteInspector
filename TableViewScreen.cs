@@ -19,6 +19,7 @@ namespace NoteInspector
             _data = data;
             tableView.DataSource = data;
             lbl_tableName.Text = tableName;
+            this.Text = tableName;
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
