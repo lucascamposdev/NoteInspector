@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.OracleClient;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -91,13 +92,13 @@ public class InspectRepository
 
         try
         {
-            using (var connection = new MySqlConnection(ConnectionPool._connectionString))
+            using (var connection = new OracleConnection(ConnectionPool._connectionString))
             {
                 await connection.OpenAsync();
 
-                using (var command = new MySqlCommand(query, connection))
+                using (var command = new OracleCommand(query, connection))
                 {
-                    using (var adapter = new MySqlDataAdapter(command))
+                    using (var adapter = new OracleDataAdapter(command))
                     {
                         await Task.Run(() => adapter.Fill(dataTable));
                     }
