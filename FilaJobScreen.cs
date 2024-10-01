@@ -43,14 +43,14 @@ namespace NoteInspector
         private async void btn_BuscarLogJob_Click(object sender, EventArgs e)
         {
             _loadingManager.Loading(this, false);
-            var selectedJob = select_JobId.SelectedItem.ToString();
-
-            if (String.IsNullOrEmpty(selectedJob))
+            if (select_JobId.SelectedItem == null)
             {
                 MessageBox.Show("Selecione um job.");
                 _loadingManager.Stop(this);
                 return;
             }
+
+            string selectedJob = select_JobId.SelectedItem.ToString();
 
             logJobView.DataSource = await _repository.GetLogJob(selectedJob);
             _loadingManager.Stop(this);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DotEnv.Core;
 
 namespace NoteInspector
 {
@@ -14,6 +15,7 @@ namespace NoteInspector
         [STAThread]
         static void Main()
         {
+            new EnvLoader().Load();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new StartScreen());
