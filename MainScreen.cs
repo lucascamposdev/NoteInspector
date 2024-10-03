@@ -13,16 +13,21 @@ namespace NoteInspector
         private readonly InspectRepository _repository;
         private readonly LoadingManager _loadingManager = new LoadingManager();
 
-        private string NOTA;
-        private string DE_ID_KAFFA;
-        private int? NU_PACOTE_ID;
+        private DataTable KAFFA_IMPORTACAO;
         private DataTable VW_IMPORTACAO;
+        private DataTable TB_ERROS;
+
+        private string NOTA;
+        private int? NU_PACOTE_ID;
+        private string DE_ID_KAFFA;
+        private int? NU_COD_PROJETO_CC;
+        private int? NU_COD_PROJETO_KIT;
 
         public MainScreen(string selectedDatabase)
         {
             InitializeComponent();
-            this.Text = $"Note Inspector - {selectedDatabase}";
             _repository = InspectRepository.Instance;
+            lbl_databaseName.Text = selectedDatabase;
         }
 
         private void InspectScreen_Click(object sender, EventArgs e)
@@ -47,10 +52,15 @@ namespace NoteInspector
             statusView.DataSource = null;
             errosView.DataSource = null;
 
-            NOTA = null;
-            DE_ID_KAFFA = null;
-            NU_PACOTE_ID = null;
+            KAFFA_IMPORTACAO = null;
+            TB_ERROS = null;
             VW_IMPORTACAO = null;
+
+            NOTA = null;
+            NU_PACOTE_ID = null;
+            DE_ID_KAFFA = null;
+            NU_COD_PROJETO_CC = null;
+            NU_COD_PROJETO_KIT = null;
 
             lbl_chavesAssociadasNumber.Text = "0";
             lbl_chavesAssociadasNumber.ForeColor = Color.Black;
@@ -72,15 +82,17 @@ namespace NoteInspector
             try
             {
                 // Tabela principal
-                DataTable kaffaImportacaoTable = await _repository.GetKaffaImportacao(NOTA);
+                KAFFA_IMPORTACAO = await _repository.GetKaffaImportacao(NOTA);
 
-                if (kaffaImportacaoTable.Rows.Count > 0)
+                if (KAFFA_IMPORTACAO.Rows.Count > 0)
                 {
-                    kaffaImportacaoView.DataSource = kaffaImportacaoTable;
+                    kaffaImportacaoView.DataSource = KAFFA_IMPORTACAO;
 
-                    // Seta as variaveis globais DE_ID_CCKAFFA e NU_PACOTE_ID
-                    GetDE_ID_KAFFA(kaffaImportacaoTable);
-                    NU_PACOTE_ID = Convert.ToInt32(kaffaImportacaoTable.Rows[0]["NU_PACOTE_ID"]);
+                    // Seta as variaveis globais
+                    GetDE_ID_KAFFA(KAFFA_IMPORTACAO);
+                    NU_PACOTE_ID = Convert.ToInt32(KAFFA_IMPORTACAO.Rows[0]["NU_PACOTE_ID"]);
+                    TB_ERROS = await _repository.GetErrosTable(DE_ID_KAFFA);
+                    VW_IMPORTACAO = await _repository.GetVwImportacao(NU_PACOTE_ID.Value);
                 }
                 else
                 {
@@ -90,11 +102,10 @@ namespace NoteInspector
                     return;
                 }
 
-                // Alimenta as demais tabelas (Status, Erros, VW)
+                // Alimenta as tabelas principais (Status, Erros)
                 statusView.DataSource = await _repository.GetStatusTable(DE_ID_KAFFA);
-                errosView.DataSource = await _repository.GetErrosTable(DE_ID_KAFFA);
+                errosView.DataSource = TB_ERROS;
 
-                VW_IMPORTACAO = await _repository.GetVwImportacao(NU_PACOTE_ID.Value);
                 CountChavesAssociadas();
             }
             catch (Exception ex)
@@ -127,6 +138,22 @@ namespace NoteInspector
             {
                 MessageBox.Show("Erro ao setar a variável DE_ID_KAFFA_CC.");
             }
+        }
+
+        private int? GetFirstIntValueFromColumn(string ColumnName, DataTable table)
+        {
+            int? val = null;
+
+            foreach (DataRow row in table.Rows)
+            {
+                if (int.TryParse(row[ColumnName].ToString(), out int value))
+                {
+                    val = value;
+                    break;
+                }
+            }
+
+            return val;
         }
 
         private void CountChavesAssociadas()
@@ -206,6 +233,67 @@ namespace NoteInspector
             {
                 DataTable data = await _repository.GetFilaJob(NU_PACOTE_ID.Value);
                 FilaJobScreen screen = new FilaJobScreen(data);
+                screen.Show();
+            }
+            else
+            {
+                MessageBox.Show("Faça a busca pela nota primeiro.");
+            }
+            _loadingManager.Stop(this);
+        }
+
+        private void btn_openErrosTable_Click(object sender, EventArgs e)
+        {
+            if (TB_ERROS == null)
+            {
+                MessageBox.Show("Faça a busca pela nota primeiro.");
+                return;
+            }
+
+            TableViewScreen screen = new TableViewScreen("TB_ERROS_IMPORTACAO_KAFFA", TB_ERROS);
+            screen.Show();
+        }
+
+        private async void btn_openVwImportacaoPVTable_Click(object sender, EventArgs e)
+        {
+            _loadingManager.Loading(this, false);
+            if (NU_PACOTE_ID.HasValue)
+            {
+                DataTable data = await _repository.GetVwImportacaoPV(NU_PACOTE_ID.Value);
+                TableViewScreen screen = new TableViewScreen("VW_IMPORTACAO_KAFFA_PV", data);
+                screen.Show();
+            }
+            else
+            {
+                MessageBox.Show("Faça a busca pela nota primeiro.");
+            }
+            _loadingManager.Stop(this);
+        }
+
+        private async void btn_openHistoricoTable_Click(object sender, EventArgs e)
+        {
+            _loadingManager.Loading(this, false);
+            if (NU_PACOTE_ID.HasValue)
+            {
+                NU_COD_PROJETO_CC =
+                    GetFirstIntValueFromColumn("NU_COD_PROJETO_CC", KAFFA_IMPORTACAO);
+                NU_COD_PROJETO_KIT =
+                    GetFirstIntValueFromColumn("NU_COD_PROJETO_KIT", KAFFA_IMPORTACAO);
+
+                DataTable HistoricoCCdata = new DataTable();
+                DataTable HistoricoKitData = new DataTable();
+
+                if (NU_COD_PROJETO_CC.HasValue)
+                {
+                HistoricoCCdata = await _repository.GetHistorico(NU_COD_PROJETO_CC.Value);
+                }
+
+                if (NU_COD_PROJETO_KIT.HasValue)
+                {
+                    HistoricoKitData = await _repository.GetHistorico(NU_COD_PROJETO_KIT.Value);
+                }
+
+                HistoricoScreen screen = new HistoricoScreen(HistoricoCCdata, HistoricoKitData);
                 screen.Show();
             }
             else

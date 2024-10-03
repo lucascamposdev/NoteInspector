@@ -62,9 +62,27 @@ public class InspectRepository
         return dataTable;
     }
 
+    public async Task<DataTable> GetVwImportacaoPV(int NU_PACOTE_ID)
+    {
+        string query = $"SELECT * FROM neosde.vw_importacao_kaffa_pv WHERE NU_PACOTE_ID = {NU_PACOTE_ID}";
+
+        var dataTable = await ExecuteSelect(query);
+
+        return dataTable;
+    }
+
     public async Task<DataTable> GetFilaJob(int NU_PACOTE_ID)
     {
         string query = $"SELECT * FROM neosde.tb_fila_job WHERE DE_PARAMETROS_JSON LIKE '%{NU_PACOTE_ID}%' order by DT_INCLUSAO desc";
+
+        var dataTable = await ExecuteSelect(query);
+
+        return dataTable;
+    }
+
+    public async Task<DataTable> GetHistorico(int NU_COD_PROJETO)
+    {
+        string query = $"SELECT * FROM neosde.vw_projeto_historico WHERE NU_PROJETO_ID = {NU_COD_PROJETO} ORDER BY DT_DATA desc";
 
         var dataTable = await ExecuteSelect(query);
 
@@ -94,7 +112,8 @@ public class InspectRepository
                 {
                     using (var adapter = new OracleDataAdapter(command))
                     {
-                        adapter.Fill(dataTable);
+                        // Garante o não bloqueio da UI para que as checagens do loading funcionem
+                        await Task.Run(() => adapter.Fill(dataTable));
                     }
                 }
             }

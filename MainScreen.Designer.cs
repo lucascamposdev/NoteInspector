@@ -35,24 +35,24 @@ namespace NoteInspector
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainScreen));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_Voltar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_databaseName = new System.Windows.Forms.Label();
             this.input_nota = new System.Windows.Forms.TextBox();
             this.btn_ProcurarNota = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_atualizarKaffaImportacao = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.errosView = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btn_atualizarErros = new System.Windows.Forms.Button();
+            this.btn_openErrosTable = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -66,6 +66,8 @@ namespace NoteInspector
             this.btn_openVwImportacaoTable = new System.Windows.Forms.Button();
             this.btn_openFilaJobTable = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.btn_openVwImportacaoPVTable = new System.Windows.Forms.Button();
+            this.btn_openHistoricoTable = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -96,6 +98,7 @@ namespace NoteInspector
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.panel1.Controls.Add(this.lbl_databaseName);
             this.panel1.Controls.Add(this.input_nota);
             this.panel1.Controls.Add(this.btn_ProcurarNota);
             this.panel1.Controls.Add(this.label1);
@@ -104,6 +107,18 @@ namespace NoteInspector
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1546, 63);
             this.panel1.TabIndex = 2;
+            // 
+            // lbl_databaseName
+            // 
+            this.lbl_databaseName.AutoSize = true;
+            this.lbl_databaseName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_databaseName.Font = new System.Drawing.Font("Corbel", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_databaseName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbl_databaseName.Location = new System.Drawing.Point(16, 16);
+            this.lbl_databaseName.Name = "lbl_databaseName";
+            this.lbl_databaseName.Size = new System.Drawing.Size(118, 35);
+            this.lbl_databaseName.TabIndex = 6;
+            this.lbl_databaseName.Text = "COELBA";
             // 
             // input_nota
             // 
@@ -134,39 +149,23 @@ namespace NoteInspector
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Corbel", 12F);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(556, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 25);
+            this.label1.Size = new System.Drawing.Size(57, 24);
             this.label1.TabIndex = 4;
             this.label1.Text = "Nota:";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            this.panel2.Controls.Add(this.btn_atualizarKaffaImportacao);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(7, 65);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1520, 40);
             this.panel2.TabIndex = 13;
-            // 
-            // btn_atualizarKaffaImportacao
-            // 
-            this.btn_atualizarKaffaImportacao.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            this.btn_atualizarKaffaImportacao.FlatAppearance.BorderSize = 0;
-            this.btn_atualizarKaffaImportacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_atualizarKaffaImportacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_atualizarKaffaImportacao.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_atualizarKaffaImportacao.Location = new System.Drawing.Point(1403, 7);
-            this.btn_atualizarKaffaImportacao.Name = "btn_atualizarKaffaImportacao";
-            this.btn_atualizarKaffaImportacao.Size = new System.Drawing.Size(99, 27);
-            this.btn_atualizarKaffaImportacao.TabIndex = 3;
-            this.btn_atualizarKaffaImportacao.Text = "Atualizar";
-            this.btn_atualizarKaffaImportacao.UseVisualStyleBackColor = true;
-            this.btn_atualizarKaffaImportacao.Click += new System.EventHandler(this.btn_atualizarKaffaImportacao_Click);
             // 
             // pictureBox2
             // 
@@ -181,11 +180,11 @@ namespace NoteInspector
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Corbel", 12F);
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(41, 5);
+            this.label5.Location = new System.Drawing.Point(41, 8);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(162, 28);
+            this.label5.Size = new System.Drawing.Size(156, 24);
             this.label5.TabIndex = 0;
             this.label5.Text = "Kaffa Importação";
             // 
@@ -196,14 +195,14 @@ namespace NoteInspector
             this.errosView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.errosView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.errosView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle37.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle37.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle37.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.errosView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.errosView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.errosView.ColumnHeadersHeight = 25;
             this.errosView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.errosView.EnableHeadersVisualStyles = false;
@@ -212,8 +211,8 @@ namespace NoteInspector
             this.errosView.Name = "errosView";
             this.errosView.RowHeadersVisible = false;
             this.errosView.RowHeadersWidth = 51;
-            dataGridViewCellStyle38.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errosView.RowsDefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errosView.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.errosView.RowTemplate.Height = 24;
             this.errosView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.errosView.Size = new System.Drawing.Size(1520, 173);
@@ -222,7 +221,7 @@ namespace NoteInspector
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            this.panel4.Controls.Add(this.btn_atualizarErros);
+            this.panel4.Controls.Add(this.btn_openErrosTable);
             this.panel4.Controls.Add(this.pictureBox4);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Location = new System.Drawing.Point(7, 503);
@@ -230,20 +229,19 @@ namespace NoteInspector
             this.panel4.Size = new System.Drawing.Size(1520, 40);
             this.panel4.TabIndex = 14;
             // 
-            // btn_atualizarErros
+            // btn_openErrosTable
             // 
-            this.btn_atualizarErros.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            this.btn_atualizarErros.FlatAppearance.BorderSize = 0;
-            this.btn_atualizarErros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_atualizarErros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_atualizarErros.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_atualizarErros.Location = new System.Drawing.Point(1403, 6);
-            this.btn_atualizarErros.Name = "btn_atualizarErros";
-            this.btn_atualizarErros.Size = new System.Drawing.Size(99, 27);
-            this.btn_atualizarErros.TabIndex = 2;
-            this.btn_atualizarErros.Text = "Atualizar";
-            this.btn_atualizarErros.UseVisualStyleBackColor = true;
-            this.btn_atualizarErros.Click += new System.EventHandler(this.btn_atualizarErros_Click);
+            this.btn_openErrosTable.FlatAppearance.BorderSize = 0;
+            this.btn_openErrosTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_openErrosTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_openErrosTable.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_openErrosTable.Location = new System.Drawing.Point(1439, 9);
+            this.btn_openErrosTable.Name = "btn_openErrosTable";
+            this.btn_openErrosTable.Size = new System.Drawing.Size(75, 23);
+            this.btn_openErrosTable.TabIndex = 27;
+            this.btn_openErrosTable.Text = "Ver";
+            this.btn_openErrosTable.UseVisualStyleBackColor = true;
+            this.btn_openErrosTable.Click += new System.EventHandler(this.btn_openErrosTable_Click);
             // 
             // pictureBox4
             // 
@@ -258,11 +256,11 @@ namespace NoteInspector
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Corbel", 12F);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(41, 5);
+            this.label3.Location = new System.Drawing.Point(41, 8);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 28);
+            this.label3.Size = new System.Drawing.Size(54, 24);
             this.label3.TabIndex = 0;
             this.label3.Text = "Erros";
             // 
@@ -321,11 +319,11 @@ namespace NoteInspector
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Corbel", 12F);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(41, 5);
+            this.label2.Location = new System.Drawing.Point(41, 8);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 28);
+            this.label2.Size = new System.Drawing.Size(63, 24);
             this.label2.TabIndex = 0;
             this.label2.Text = "Status";
             // 
@@ -336,13 +334,13 @@ namespace NoteInspector
             this.statusView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.statusView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.statusView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle39.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle39.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.statusView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.statusView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.statusView.ColumnHeadersHeight = 25;
             this.statusView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.statusView.EnableHeadersVisualStyles = false;
@@ -351,8 +349,8 @@ namespace NoteInspector
             this.statusView.Name = "statusView";
             this.statusView.RowHeadersVisible = false;
             this.statusView.RowHeadersWidth = 51;
-            dataGridViewCellStyle40.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusView.RowsDefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.statusView.RowTemplate.Height = 24;
             this.statusView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.statusView.Size = new System.Drawing.Size(1520, 173);
@@ -365,13 +363,13 @@ namespace NoteInspector
             this.kaffaImportacaoView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.kaffaImportacaoView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.kaffaImportacaoView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle41.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle41.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.kaffaImportacaoView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.kaffaImportacaoView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.kaffaImportacaoView.ColumnHeadersHeight = 25;
             this.kaffaImportacaoView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.kaffaImportacaoView.EnableHeadersVisualStyles = false;
@@ -380,8 +378,8 @@ namespace NoteInspector
             this.kaffaImportacaoView.Name = "kaffaImportacaoView";
             this.kaffaImportacaoView.RowHeadersVisible = false;
             this.kaffaImportacaoView.RowHeadersWidth = 51;
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kaffaImportacaoView.RowsDefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kaffaImportacaoView.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.kaffaImportacaoView.RowTemplate.Height = 24;
             this.kaffaImportacaoView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.kaffaImportacaoView.Size = new System.Drawing.Size(1520, 173);
@@ -425,12 +423,40 @@ namespace NoteInspector
             this.label6.Text = "Reenvio Checkin";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btn_openVwImportacaoPVTable
+            // 
+            this.btn_openVwImportacaoPVTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_openVwImportacaoPVTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_openVwImportacaoPVTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.btn_openVwImportacaoPVTable.Location = new System.Drawing.Point(361, 737);
+            this.btn_openVwImportacaoPVTable.Name = "btn_openVwImportacaoPVTable";
+            this.btn_openVwImportacaoPVTable.Size = new System.Drawing.Size(75, 32);
+            this.btn_openVwImportacaoPVTable.TabIndex = 27;
+            this.btn_openVwImportacaoPVTable.Text = "PV";
+            this.btn_openVwImportacaoPVTable.UseVisualStyleBackColor = true;
+            this.btn_openVwImportacaoPVTable.Click += new System.EventHandler(this.btn_openVwImportacaoPVTable_Click);
+            // 
+            // btn_openHistoricoTable
+            // 
+            this.btn_openHistoricoTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_openHistoricoTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_openHistoricoTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.btn_openHistoricoTable.Location = new System.Drawing.Point(1137, 739);
+            this.btn_openHistoricoTable.Name = "btn_openHistoricoTable";
+            this.btn_openHistoricoTable.Size = new System.Drawing.Size(96, 32);
+            this.btn_openHistoricoTable.TabIndex = 28;
+            this.btn_openHistoricoTable.Text = "Histórico";
+            this.btn_openHistoricoTable.UseVisualStyleBackColor = true;
+            this.btn_openHistoricoTable.Click += new System.EventHandler(this.btn_openHistoricoTable_Click);
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1533, 793);
+            this.Controls.Add(this.btn_openHistoricoTable);
+            this.Controls.Add(this.btn_openVwImportacaoPVTable);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btn_openFilaJobTable);
             this.Controls.Add(this.btn_openVwImportacaoTable);
@@ -445,6 +471,7 @@ namespace NoteInspector
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -482,18 +509,20 @@ namespace NoteInspector
         private PictureBox pictureBox6;
         private Label label4;
         private Label lbl_chavesAssociadasNumber;
-        private Button btn_atualizarErros;
         private Panel panel3;
         private PictureBox pictureBox3;
         private Label label2;
         private DataGridView statusView;
         private DataGridView kaffaImportacaoView;
         private Button btn_openVwImportacaoTable;
-        private Button btn_atualizarKaffaImportacao;
         private TextBox input_nota;
         private Button btn_ProcurarNota;
         private Label label1;
         private Button btn_openFilaJobTable;
         private Label label6;
+        private Label lbl_databaseName;
+        private Button btn_openErrosTable;
+        private Button btn_openVwImportacaoPVTable;
+        private Button btn_openHistoricoTable;
     }
 }
