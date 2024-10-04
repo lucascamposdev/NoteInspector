@@ -115,7 +115,7 @@
             this.historicoCCView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.historicoCCView.RowTemplate.Height = 24;
             this.historicoCCView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.historicoCCView.Size = new System.Drawing.Size(1537, 335);
+            this.historicoCCView.Size = new System.Drawing.Size(1537, 320);
             this.historicoCCView.TabIndex = 24;
             // 
             // panel2
@@ -123,7 +123,7 @@
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(0, 397);
+            this.panel2.Location = new System.Drawing.Point(0, 380);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1537, 63);
             this.panel2.TabIndex = 25;
@@ -174,7 +174,7 @@
             this.historicoKitView.DefaultCellStyle = dataGridViewCellStyle5;
             this.historicoKitView.EnableHeadersVisualStyles = false;
             this.historicoKitView.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.historicoKitView.Location = new System.Drawing.Point(0, 460);
+            this.historicoKitView.Location = new System.Drawing.Point(0, 443);
             this.historicoKitView.Name = "historicoKitView";
             this.historicoKitView.RowHeadersVisible = false;
             this.historicoKitView.RowHeadersWidth = 51;
@@ -182,19 +182,20 @@
             this.historicoKitView.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.historicoKitView.RowTemplate.Height = 24;
             this.historicoKitView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.historicoKitView.Size = new System.Drawing.Size(1537, 335);
+            this.historicoKitView.Size = new System.Drawing.Size(1537, 320);
             this.historicoKitView.TabIndex = 26;
             // 
             // HistoricoScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1533, 794);
+            this.ClientSize = new System.Drawing.Size(1533, 762);
             this.Controls.Add(this.historicoKitView);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.historicoCCView);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "HistoricoScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

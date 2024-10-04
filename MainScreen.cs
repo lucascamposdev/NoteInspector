@@ -146,7 +146,7 @@ namespace NoteInspector
 
             foreach (DataRow row in table.Rows)
             {
-                if (int.TryParse(row[ColumnName].ToString(), out int value))
+                if (int.TryParse(row[ColumnName].ToString(), out int value) && value != 0)
                 {
                     val = value;
                     break;

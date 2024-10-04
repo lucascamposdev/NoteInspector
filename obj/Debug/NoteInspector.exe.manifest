@@ -187,14 +187,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NoteInspector.exe" size="502216">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NoteInspector.exe" size="789960">
       <assemblyIdentity name="NoteInspector" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>V2yOay+tyM+ADnFEWXkfMo35yB2H1X8cuVE7pjijmc8=</dsig:DigestValue>
+        <dsig:DigestValue>y3ta7AIW52ReWbKNiG0lvt90oTsYyKNtgfFyRzVuBVg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

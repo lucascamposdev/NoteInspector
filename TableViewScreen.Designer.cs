@@ -33,11 +33,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Filtrar = new System.Windows.Forms.Button();
+            this.input_buscar = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_tableName = new System.Windows.Forms.Label();
             this.tableView = new System.Windows.Forms.DataGridView();
-            this.input_buscar = new System.Windows.Forms.TextBox();
-            this.btn_Filtrar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableView)).BeginInit();
@@ -54,6 +54,32 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1537, 63);
             this.panel1.TabIndex = 3;
+            // 
+            // btn_Filtrar
+            // 
+            this.btn_Filtrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btn_Filtrar.BackColor = System.Drawing.Color.Black;
+            this.btn_Filtrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Filtrar.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Filtrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Filtrar.Location = new System.Drawing.Point(1412, 18);
+            this.btn_Filtrar.Name = "btn_Filtrar";
+            this.btn_Filtrar.Size = new System.Drawing.Size(103, 29);
+            this.btn_Filtrar.TabIndex = 24;
+            this.btn_Filtrar.Text = "Filtrar";
+            this.btn_Filtrar.UseVisualStyleBackColor = false;
+            this.btn_Filtrar.Click += new System.EventHandler(this.btn_Filtrar_Click);
+            // 
+            // input_buscar
+            // 
+            this.input_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.input_buscar.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.input_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.input_buscar.Location = new System.Drawing.Point(1187, 20);
+            this.input_buscar.Name = "input_buscar";
+            this.input_buscar.Size = new System.Drawing.Size(213, 27);
+            this.input_buscar.TabIndex = 23;
+            this.input_buscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.input_buscar_KeyPress);
             // 
             // pictureBox1
             // 
@@ -112,32 +138,6 @@
             this.tableView.Size = new System.Drawing.Size(1537, 581);
             this.tableView.TabIndex = 22;
             // 
-            // input_buscar
-            // 
-            this.input_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.input_buscar.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.input_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.input_buscar.Location = new System.Drawing.Point(1187, 20);
-            this.input_buscar.Name = "input_buscar";
-            this.input_buscar.Size = new System.Drawing.Size(213, 27);
-            this.input_buscar.TabIndex = 23;
-            this.input_buscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.input_buscar_KeyPress);
-            // 
-            // btn_Filtrar
-            // 
-            this.btn_Filtrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btn_Filtrar.BackColor = System.Drawing.Color.Black;
-            this.btn_Filtrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Filtrar.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Filtrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Filtrar.Location = new System.Drawing.Point(1412, 18);
-            this.btn_Filtrar.Name = "btn_Filtrar";
-            this.btn_Filtrar.Size = new System.Drawing.Size(103, 29);
-            this.btn_Filtrar.TabIndex = 24;
-            this.btn_Filtrar.Text = "Filtrar";
-            this.btn_Filtrar.UseVisualStyleBackColor = false;
-            this.btn_Filtrar.Click += new System.EventHandler(this.btn_Filtrar_Click);
-            // 
             // TableViewScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -146,6 +146,7 @@
             this.Controls.Add(this.tableView);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "TableViewScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

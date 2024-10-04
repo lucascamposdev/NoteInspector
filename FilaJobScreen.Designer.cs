@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FilaJobScreen));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_tableName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.filaJobView = new System.Windows.Forms.DataGridView();
             this.logJobView = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_BuscarLogJob = new System.Windows.Forms.Button();
+            this.select_JobId = new System.Windows.Forms.ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.select_JobId = new System.Windows.Forms.ComboBox();
-            this.btn_BuscarLogJob = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.filaJobView)).BeginInit();
@@ -90,31 +90,31 @@
             this.filaJobView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.filaJobView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.filaJobView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.filaJobView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.filaJobView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.filaJobView.ColumnHeadersHeight = 25;
             this.filaJobView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.filaJobView.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.filaJobView.DefaultCellStyle = dataGridViewCellStyle2;
             this.filaJobView.EnableHeadersVisualStyles = false;
             this.filaJobView.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.filaJobView.Location = new System.Drawing.Point(0, 60);
             this.filaJobView.Name = "filaJobView";
             this.filaJobView.RowHeadersVisible = false;
             this.filaJobView.RowHeadersWidth = 51;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filaJobView.RowsDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filaJobView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.filaJobView.RowTemplate.Height = 24;
             this.filaJobView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.filaJobView.Size = new System.Drawing.Size(1537, 173);
@@ -126,31 +126,31 @@
             this.logJobView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.logJobView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.logJobView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.logJobView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.logJobView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.logJobView.ColumnHeadersHeight = 25;
             this.logJobView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.logJobView.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.logJobView.DefaultCellStyle = dataGridViewCellStyle5;
             this.logJobView.EnableHeadersVisualStyles = false;
             this.logJobView.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.logJobView.Location = new System.Drawing.Point(0, 299);
             this.logJobView.Name = "logJobView";
             this.logJobView.RowHeadersVisible = false;
             this.logJobView.RowHeadersWidth = 51;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logJobView.RowsDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logJobView.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.logJobView.RowTemplate.Height = 24;
             this.logJobView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.logJobView.Size = new System.Drawing.Size(1537, 173);
@@ -167,6 +167,31 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1537, 63);
             this.panel2.TabIndex = 24;
+            // 
+            // btn_BuscarLogJob
+            // 
+            this.btn_BuscarLogJob.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btn_BuscarLogJob.BackColor = System.Drawing.Color.Black;
+            this.btn_BuscarLogJob.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_BuscarLogJob.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_BuscarLogJob.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_BuscarLogJob.Location = new System.Drawing.Point(295, 17);
+            this.btn_BuscarLogJob.Name = "btn_BuscarLogJob";
+            this.btn_BuscarLogJob.Size = new System.Drawing.Size(103, 31);
+            this.btn_BuscarLogJob.TabIndex = 27;
+            this.btn_BuscarLogJob.Text = "Buscar";
+            this.btn_BuscarLogJob.UseVisualStyleBackColor = false;
+            this.btn_BuscarLogJob.Click += new System.EventHandler(this.btn_BuscarLogJob_Click);
+            // 
+            // select_JobId
+            // 
+            this.select_JobId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.select_JobId.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.select_JobId.FormattingEnabled = true;
+            this.select_JobId.Location = new System.Drawing.Point(167, 16);
+            this.select_JobId.Name = "select_JobId";
+            this.select_JobId.Size = new System.Drawing.Size(121, 31);
+            this.select_JobId.TabIndex = 26;
             // 
             // pictureBox2
             // 
@@ -189,31 +214,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Log Job";
             // 
-            // select_JobId
-            // 
-            this.select_JobId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.select_JobId.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.select_JobId.FormattingEnabled = true;
-            this.select_JobId.Location = new System.Drawing.Point(167, 16);
-            this.select_JobId.Name = "select_JobId";
-            this.select_JobId.Size = new System.Drawing.Size(121, 31);
-            this.select_JobId.TabIndex = 26;
-            // 
-            // btn_BuscarLogJob
-            // 
-            this.btn_BuscarLogJob.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btn_BuscarLogJob.BackColor = System.Drawing.Color.Black;
-            this.btn_BuscarLogJob.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_BuscarLogJob.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_BuscarLogJob.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_BuscarLogJob.Location = new System.Drawing.Point(295, 17);
-            this.btn_BuscarLogJob.Name = "btn_BuscarLogJob";
-            this.btn_BuscarLogJob.Size = new System.Drawing.Size(103, 31);
-            this.btn_BuscarLogJob.TabIndex = 27;
-            this.btn_BuscarLogJob.Text = "Buscar";
-            this.btn_BuscarLogJob.UseVisualStyleBackColor = false;
-            this.btn_BuscarLogJob.Click += new System.EventHandler(this.btn_BuscarLogJob_Click);
-            // 
             // FilaJobScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -224,6 +224,7 @@
             this.Controls.Add(this.filaJobView);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FilaJobScreen";
             this.Text = "Fila Job";
